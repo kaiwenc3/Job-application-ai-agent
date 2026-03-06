@@ -1,0 +1,208 @@
+.job-detail {
+    padding: var(--space-8);
+    animation: fadeIn 0.3s ease;
+}
+
+.job-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: var(--space-6);
+}
+
+.job-detail-header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+}
+
+.job-detail-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    flex-shrink: 0;
+}
+
+.job-detail-title-group {
+    flex: 1;
+}
+
+.job-detail-role {
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.job-detail-company {
+    font-size: var(--font-size-md);
+    color: var(--text-secondary);
+    margin-top: var(--space-1);
+}
+
+.job-detail-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-6);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.job-meta-item {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.job-detail-section {
+    margin-bottom: var(--space-6);
+}
+
+.job-detail-section h3 {
+    font-size: var(--font-size-md);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-3);
+}
+
+.job-detail-section p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.job-detail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+.job-detail-notes {
+    background: var(--bg-secondary);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--primary-400);
+}
+
+/* Status Buttons */
+.status-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.status-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.status-btn:hover {
+    background: var(--bg-tertiary);
+}
+
+.status-btn.active {
+    background: var(--primary-50);
+    border-color: var(--primary-300);
+    color: var(--primary-700);
+    font-weight: 600;
+}
+
+[data-theme="dark"] .status-btn.active {
+    background: rgba(99, 102, 241, 0.15);
+    border-color: rgba(99, 102, 241, 0.3);
+    color: var(--primary-400);
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    padding-left: var(--space-6);
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border-color);
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: var(--space-5);
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -21px;
+    top: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: var(--radius-full);
+    background: var(--primary-500);
+    border: 2px solid var(--bg-card);
+}
+
+.timeline-item[data-type="interview"] .timeline-dot {
+    background: var(--warning-500);
+}
+
+.timeline-item[data-type="offer"] .timeline-dot {
+    background: var(--success-500);
+}
+
+.timeline-item[data-type="rejected"] .timeline-dot {
+    background: var(--danger-500);
+}
+
+.timeline-item[data-type="upcoming"] .timeline-dot {
+    background: var(--accent-500);
+    animation: pulse 2s infinite;
+}
+
+.timeline-event {
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    color: var(--text-primary);
+}
+
+.timeline-date {
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+    margin-top: 2px;
+}
+
+.job-detail-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+@media (max-width: 1000px) {
+    .job-detail-grid {
+        grid-template-columns: 1fr;
+    }
+}

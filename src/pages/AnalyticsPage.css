@@ -1,0 +1,237 @@
+.analytics {
+    padding: var(--space-8);
+    animation: fadeIn 0.3s ease;
+}
+
+.analytics-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+}
+
+.analytics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+}
+
+.analytics-card-title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-5);
+}
+
+/* Funnel */
+.funnel {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.funnel-step {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.funnel-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+}
+
+.funnel-count {
+    color: var(--text-primary);
+    font-weight: 800;
+}
+
+.funnel-bar-container {
+    width: 100%;
+    height: 28px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.funnel-bar {
+    height: 100%;
+    border-radius: var(--radius-md);
+    transition: width 1s ease;
+    min-width: 4px;
+}
+
+.funnel-insight {
+    margin-top: var(--space-5);
+    padding: var(--space-4);
+    background: linear-gradient(135deg, var(--primary-50), var(--accent-50));
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--primary-100);
+}
+
+[data-theme="dark"] .funnel-insight {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(20, 184, 166, 0.1));
+    border-color: rgba(99, 102, 241, 0.2);
+}
+
+.insight-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    color: var(--primary-600);
+    margin-bottom: var(--space-2);
+}
+
+[data-theme="dark"] .insight-badge {
+    color: var(--primary-400);
+}
+
+.funnel-insight p {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Weekly Chart */
+.chart-bars {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 200px;
+    gap: var(--space-3);
+    padding-bottom: var(--space-6);
+}
+
+.chart-bar-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.chart-bar-wrapper {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.chart-bar {
+    width: 70%;
+    background: linear-gradient(180deg, var(--primary-400), var(--primary-600));
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    min-height: 4px;
+    position: relative;
+    transition: height 0.8s ease;
+}
+
+.chart-bar-value {
+    position: absolute;
+    top: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.chart-bar-label {
+    margin-top: var(--space-2);
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+    font-weight: 500;
+}
+
+/* Skills Chart */
+.skills-chart {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.skill-bar-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.skill-bar-label {
+    width: 100px;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.skill-bar-container {
+    flex: 1;
+    height: 10px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.skill-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-500), var(--primary-500));
+    border-radius: var(--radius-full);
+    transition: width 0.8s ease;
+}
+
+.skill-bar-count {
+    width: 24px;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    color: var(--text-primary);
+    flex-shrink: 0;
+}
+
+/* Companies */
+.companies-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.company-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-md);
+}
+
+.company-rank {
+    font-size: var(--font-size-xs);
+    font-weight: 800;
+    color: var(--primary-500);
+    width: 24px;
+}
+
+.company-name {
+    flex: 1;
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+}
+
+.company-count {
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+}
+
+@media (max-width: 1200px) {
+    .analytics-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .analytics-grid {
+        grid-template-columns: 1fr;
+    }
+}

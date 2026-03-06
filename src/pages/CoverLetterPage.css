@@ -1,0 +1,206 @@
+.cover-letter-page {
+    padding: var(--space-8);
+    animation: fadeIn 0.3s ease;
+}
+
+.cl-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+    align-items: start;
+}
+
+/* AI Badge */
+.cl-ai-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-1) var(--space-3);
+    background: linear-gradient(135deg, var(--primary-50), var(--accent-50));
+    border: 1px solid var(--primary-100);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--primary-600);
+    margin-bottom: var(--space-4);
+}
+
+[data-theme="dark"] .cl-ai-badge {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(20, 184, 166, 0.15));
+    border-color: rgba(99, 102, 241, 0.3);
+    color: var(--primary-400);
+}
+
+.cl-ai-sparkle {
+    font-size: 14px;
+}
+
+/* Tone Selector */
+.tone-selector {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+}
+
+.tone-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-4);
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.tone-option:hover {
+    border-color: var(--primary-300);
+    background: var(--primary-50);
+}
+
+[data-theme="dark"] .tone-option:hover {
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.tone-option.active {
+    border-color: var(--primary-500);
+    background: var(--primary-50);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+[data-theme="dark"] .tone-option.active {
+    background: rgba(99, 102, 241, 0.15);
+}
+
+.tone-icon {
+    font-size: 24px;
+}
+
+.tone-label {
+    font-weight: 700;
+    font-size: var(--font-size-sm);
+    color: var(--text-primary);
+}
+
+.tone-desc {
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+}
+
+/* Generating */
+.cl-generating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    text-align: center;
+}
+
+.cl-gen-spinner {
+    width: 48px;
+    height: 48px;
+    border: 3px solid var(--border-color);
+    border-top-color: var(--primary-500);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-bottom: var(--space-5);
+}
+
+.cl-gen-steps {
+    margin-top: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    text-align: left;
+}
+
+.cl-gen-step {
+    font-size: var(--font-size-sm);
+    color: var(--text-tertiary);
+    transition: color var(--transition-fast);
+}
+
+.cl-gen-step.done {
+    color: var(--success-500);
+}
+
+/* Result */
+.cl-result-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-4);
+}
+
+.cl-result-actions {
+    display: flex;
+    gap: var(--space-2);
+}
+
+.cl-result-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-5);
+}
+
+.cl-word-count {
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+}
+
+.cl-letter-content {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    font-size: var(--font-size-sm);
+    line-height: 1.8;
+    color: var(--text-primary);
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.cl-letter-content p {
+    margin-bottom: var(--space-2);
+}
+
+.cl-result-footer {
+    margin-top: var(--space-4);
+    display: flex;
+    justify-content: center;
+}
+
+/* Empty State */
+.cl-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    text-align: center;
+}
+
+.cl-empty-icon {
+    font-size: 48px;
+    margin-bottom: var(--space-4);
+    opacity: 0.5;
+}
+
+.cl-empty h3 {
+    margin-bottom: var(--space-2);
+}
+
+.cl-empty p {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+@media (max-width: 1000px) {
+    .cl-grid {
+        grid-template-columns: 1fr;
+    }
+}
